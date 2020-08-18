@@ -1,62 +1,71 @@
 .App {
-  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-image: url(./assets/3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .entry img {
- 
 }
 
 .container {
-  background-image: url(./assets/5.jpg);
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  
+  width: 35%;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 header {
-  background-color: rgba(172, 172, 161, 0.921);  /*rgb(202, 114, 65)*/
+ 
   height: 5em;
-  width: 35%;
-  margin: 0 auto;
-  
-  
+  width: 100%;
 }
 
 .entry {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 3em auto 0 auto;
-  background-color: rgba(172, 172, 161, 0.921);
-  width: 35%;
+  margin-bottom: 3em;
+  width: 100%;
   border-radius: 1%;
-  
 }
 
 @media screen and (max-width: 760px) {
   .entry {
     width: 90%;
+    margin: 0 auto ;
   }
   header {
-   width: 90%;
-   margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
   }
 }
-
-
 
 .entry ul {
   align-self: center;
   justify-self: center;
-    
 }
 
 .description {
- text-align: justify;
+  text-align: justify;
 }
 
 .entry img {
   width: 100%;
 }
 
+.secondContainer {
+  display: flex;
+  justify-content: flex-end;
+  height: cover;
+  width: 40%;
+}
+
+.socialMedia {
+ position: fixed;
+ bottom: 13.3em;
+ right: 8em;
+
+}

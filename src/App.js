@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import * as Contentful from "contentful";
 import marked from "marked";
+import SocialMedia from './components/SocialMedia'
 
 const client = Contentful.createClient({
   space: process.env.REACT_APP_SPACE_ID,
@@ -43,6 +44,11 @@ function App() {
         <main>
           <div className="mainwrapper">{Entries}</div>
         </main>
+      </div>
+      <div className="secondContainer">
+        <div className="socialMedia">
+          <SocialMedia />
+        </div>
       </div>
     </div>
   );
