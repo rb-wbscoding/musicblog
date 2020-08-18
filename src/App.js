@@ -2,7 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import * as Contentful from "contentful";
 import marked from "marked";
+
+import SocialMedia from './components/SocialMedia'
+
 import { StateContext } from "./components/statecontext/stateContext";
+
 
 
 function App() {
@@ -30,6 +34,11 @@ function App() {
         <main>
           <div className="mainwrapper">{Entries}</div>
         </main>
+      </div>
+      <div className="secondContainer">
+        <div className="socialMedia">
+          <SocialMedia />
+        </div>
       </div>
     </div>
   );

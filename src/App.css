@@ -1,41 +1,71 @@
 .App {
-  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-image: url(./assets/3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .entry img {
- 
 }
 
 .container {
-  background-color: rgb(172, 190, 190);
-  
+  width: 35%;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 header {
-  background-color: rgb(177, 127, 224);
-  height: 200px;
+ 
+  height: 5em;
+  width: 100%;
 }
 
 .entry {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  width: 30%;
-  background-color: rgb(235, 225, 225);
-  border: 2px solid black; 
-  position: relative;
+  margin-bottom: 3em;
+  width: 100%;
+  border-radius: 1%;
 }
 
+@media screen and (max-width: 760px) {
+  .entry {
+    width: 90%;
+    margin: 0 auto ;
+  }
+  header {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 
 .entry ul {
   align-self: center;
   justify-self: center;
-    
 }
 
 .description {
- text-align: justify;
+  text-align: justify;
 }
 
 .entry img {
   width: 100%;
+}
+
+.secondContainer {
+  display: flex;
+  justify-content: flex-end;
+  height: cover;
+  width: 40%;
+}
+
+.socialMedia {
+ position: fixed;
+ bottom: 13.3em;
+ right: 8em;
+
 }
