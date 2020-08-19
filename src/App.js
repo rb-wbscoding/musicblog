@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "./App.css";
-import * as Contentful from "contentful";
 import marked from "marked";
+import piano from "./assets/3.jpg"
 
 import SocialMedia from './components/SocialMedia'
 
@@ -27,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src={piano} alt="piano" />
       <div className="container">
         <header>
           <div className="head"></div>
