@@ -9,28 +9,35 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
+  font-family: Helvetica;
 }
 
 .entry img {
+  margin: 0 auto;
+  width: 80%;
 }
 
 .container {
-  width: 25%;
+  
+  width: 45%;
   margin-left: 3em;
   margin-right: 3em;
 }
 header {
  
-  height: 5em;
-  width: 100%;
+  height: 3em;
+  width: 80%;
 }
 
 .entry {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3em;
-  width: 100%;
+  
+  width: 90%;
+  margin: 3em auto 3em auto;
   border-radius: 1%;
+  line-height: 1.5em;
+
 }
 
 @media screen and (max-width: 760px) {
@@ -59,14 +66,35 @@ header {
 
 .secondContainer {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
   height: cover;
   width: 40%;
+  
+}
+.secondContainer h1 {
+ margin-top: 2em;
+}
+.secondContainer p {
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.5em;
 }
 
-.socialMedia {
- position: fixed;
- bottom: 14%;
- right: 10%;
 
+
+.socialMedia {
+  position: fixed;
+bottom: 6%;
+}
+
+.entry h1 {
+  
+  
+}
+
+.description {
+ 
+  
 }
