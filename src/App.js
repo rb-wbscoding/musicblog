@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./App.css";
 import Header from './components/header/Header'
@@ -8,6 +9,7 @@ import Arrow from "./components/arrow/Arrow";
 
 
 function App() {
+
  
   return (
     <div className="App">
@@ -17,8 +19,11 @@ function App() {
         <div className="mainwrapper">
         <BlogCard />
         </div>
-        
-       
+        <div className="phone">
+         <div className="ar"><Arrow /></div> 
+          <div className="so"><SocialMedia /></div>
+        </div>
+
       </div>
       <div className="phone">
         <div className="ar"><Arrow /></div> 
