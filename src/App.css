@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-image: url(./assets/3.jpg);
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
