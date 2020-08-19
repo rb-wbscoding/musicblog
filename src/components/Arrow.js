@@ -20,7 +20,7 @@ export default function Arrow() {
   return (
     <div className="arrow">
       <FontAwesomeIcon icon={faArrowLeft} size="lg" onClick={left} />
-      <span>{count}</span>
+      <span>Page: {count}</span>
       <FontAwesomeIcon icon={faArrowRight} size="lg" onClick={right} />
     </div>
   );
