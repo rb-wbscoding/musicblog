@@ -12,7 +12,7 @@ export default function Arrow() {
     }
   }
   function right() {
-    if (count < 4) {
+    if (count < 3) {
       return setCount(count + 1);
     }
   }

@@ -15,20 +15,19 @@
   font-family: Helvetica;
 }
 
-.entry img {
+.entry .image {
+  border-radius: 2%;
+  width: 70%;
   margin: 0 auto;
-  width: 80%;
+  
 }
 
 .container {
-  width: 45%;
+  width: 35%;
   margin-left: 3em;
   margin-right: 3em;
 }
-header {
-  height: 3em;
-  width: 80%;
-}
+
 
 .entry {
   display: flex;
@@ -95,6 +94,12 @@ header {
     width: 90%;
     margin: 0 auto;
     padding-top: 3em;
+  }
+  .entry .image {
+    
+    width: 100%;
+    
+    
   }
   .secondContainer {
     width: 100%;

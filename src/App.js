@@ -13,7 +13,7 @@ function App() {
   const Entries = entries.map((entry) => (
     <div className="entry" key={entry.sys.id}>
       <h1>{entry.fields.title}</h1>
-      <img src={entry.fields.image.fields.file.url} alt="" />
+      <img className="image" src={entry.fields.image.fields.file.url} alt="" />
       <section
         className="description"
         dangerouslySetInnerHTML={{ __html: marked(entry.fields.description) }}
