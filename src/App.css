@@ -1,17 +1,25 @@
+.phone {
+  display: none;
+}
 .App {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-image: url(./assets/3.jpg);
+  background-image: url(./assets/505.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
+  font-family: Helvetica;
 }
 
-.entry img {
+.entry .image {
+  border-radius: 2%;
+  width: 70%;
+  margin: 0 auto;
+  
 }
 
 .container {
@@ -19,29 +27,16 @@
   margin-left: 3em;
   margin-right: 3em;
 }
-header {
- 
-  height: 5em;
-  width: 100%;
-}
+
 
 .entry {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3em;
-  width: 100%;
+  word-wrap: break-word;
+  width: 90%;
+  margin: 3em auto;
   border-radius: 1%;
-}
-
-@media screen and (max-width: 760px) {
-  .entry {
-    width: 90%;
-    margin: 0 auto ;
-  }
-  header {
-    width: 90%;
-    margin: 0 auto;
-  }
+  line-height: 1.5em;
 }
 
 .entry ul {
@@ -59,14 +54,91 @@ header {
 
 .secondContainer {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
   height: cover;
   width: 40%;
 }
+.secondContainer h1 {
+  margin-top: 2em;
+}
+.secondContainer p {
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.5em;
+}
 
 .socialMedia {
- position: fixed;
- bottom: 13.3em;
- right: 8em;
+  position: fixed;
+  bottom: 6%;
+}
 
+.arrowcont {
+  position: fixed;
+  top: 45%;
+}
+
+@media screen and (max-width: 760px) {
+  .App {
+    flex-direction: column-reverse;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .entry {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3em;
+  }
+  .entry .image {
+    
+    width: 100%;
+    
+    
+  }
+  .secondContainer {
+    width: 100%;
+    margin: 0;
+  }
+  .secondContainer h1 {
+    margin-top: 0.5em;
+  }
+  .secondContainer p {
+    width: 90%;
+  }
+  .hidden {
+    display: none;
+  }
+  .socialMedia {
+    margin-top: 3em;
+    bottom: 1%;
+    display: none;
+  }
+  .arrowcont {
+    display: none;
+  }
+
+  .container {
+    
+  }
+  .phone {
+    margin-top: 2em;
+
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(222, 222, 214, 0.9);
+  }
+  .ar {
+    padding-bottom: 1.5em;
+  }
+ 
+ 
 }

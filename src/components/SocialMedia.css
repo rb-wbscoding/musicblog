@@ -1,3 +1,7 @@
 .social > * {
   padding-right: 0.2em;
 }
+
+@media screen and (max-width: 760px) {
+
+}
