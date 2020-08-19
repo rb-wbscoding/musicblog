@@ -37,7 +37,7 @@ function App() {
           various genres. Stay tuned!!!{" "}
         </p>
         <p>Don't hesitate to checkout our social media and YouTube channel.</p>
-        <div>
+        <div className="arrowcont">
           <Arrow />
         </div>
         <div className="socialMedia">
