@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "./App.css";
-import * as Contentful from "contentful";
+
 import marked from "marked";
 
 import SocialMedia from './components/SocialMedia'
