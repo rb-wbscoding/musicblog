@@ -3,11 +3,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-image: url(./assets/3.jpg);
+  background-image: url(./assets/30.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100%;
 }
 
 .entry img {
@@ -65,7 +66,7 @@ header {
 
 .socialMedia {
  position: fixed;
- bottom: 13.3em;
- right: 8em;
+ bottom: 14%;
+ right: 10%;
 
 }
