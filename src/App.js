@@ -28,6 +28,10 @@ function App() {
         <main>
           <div className="mainwrapper">{Entries}</div>
         </main>
+        <div className="phone">
+         <div className="ar"><Arrow /></div> 
+          <div className="so"><SocialMedia /></div>
+        </div>
       </div>
       <div className="secondContainer">
         <h1>MUSIC BLOG</h1>
@@ -36,12 +40,14 @@ function App() {
           Don't miss them. You can find a collection of outstanding albums from
           various genres. Stay tuned!!!{" "}
         </p>
-        <p>Don't hesitate to checkout our social media and YouTube channel.</p>
+        <p className="hidden">
+          Don't hesitate to checkout our social media and YouTube channel.
+        </p>
         <div className="arrowcont">
           <Arrow />
         </div>
         <div className="socialMedia">
-          <SocialMedia />
+          <SocialMedia className="ikonki" />
         </div>
       </div>
     </div>
