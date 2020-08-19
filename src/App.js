@@ -6,8 +6,6 @@ import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
 
 
-
-
 function App() {
  
   return (
