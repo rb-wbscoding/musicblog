@@ -10,6 +10,7 @@ export default function StateContextProvider({ children }) {
       });
 
     const [entries, setEntries] = useState([]);
+    const [filteredEntries ,setFilteredEntries]=useState([]);
 
   useEffect(() => {
     client
@@ -29,7 +30,7 @@ export default function StateContextProvider({ children }) {
 
     return (
         <StateContext.Provider
-          value={{entries }}
+          value={{entries, filteredEntries ,setFilteredEntries }}
           >
             {children}
           </StateContext.Provider>

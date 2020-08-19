@@ -1,0 +1,17 @@
+.head {
+ 
+    height: 5em;
+    width: 100%;
+    color: red;
+    text-align: center;
+    font-family: 'Ubuntu';
+  }
+
+  @media screen and (max-width: 760px) {
+    .head {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  
+  

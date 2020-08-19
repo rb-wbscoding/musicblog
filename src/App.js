@@ -1,39 +1,25 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import "./App.css";
-import * as Contentful from "contentful";
-import marked from "marked";
+import Header from './components/header/Header'
+import SocialMedia from './components/socialmedia/SocialMedia'
+import BlogCard from './components/blogcard/BlogCard'
+import Filter from './components/filter/Filter'
 
-import SocialMedia from './components/SocialMedia'
-
-import { StateContext } from "./components/statecontext/stateContext";
 
 
 
 function App() {
-  const {entries}=useContext(StateContext);
-
-  //const postDescription = marked(entry.fields.description)
-  //<section dangerouslySetInnerHTML={{ __html: postDescription }} />
-  const Entries = entries.map((entry) => (
-    <div className="entry" key={entry.sys.id}>
-      <h1>{entry.fields.title}</h1>
-      <img src={entry.fields.image.fields.file.url} alt="" />
-      <section
-        className="description"
-        dangerouslySetInnerHTML={{ __html: marked(entry.fields.description) }}
-      />
-    </div>
-  ));
-
+ 
   return (
     <div className="App">
       <div className="container">
-        <header>
-          <div className="head"></div>
-        </header>
-        <main>
-          <div className="mainwrapper">{Entries}</div>
-        </main>
+        <Header />
+        <Filter />
+        <div className="mainwrapper">
+        <BlogCard />
+        </div>
+        
+       
       </div>
       <div className="secondContainer">
         <div className="socialMedia">
