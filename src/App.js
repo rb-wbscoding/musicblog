@@ -25,6 +25,10 @@ function App() {
         </div>
 
       </div>
+      <div className="phone">
+        <div className="ar"><Arrow /></div> 
+        <div className="so"><SocialMedia /></div>
+      </div>
       <div className="secondContainer">
         <h1>MUSIC BLOG</h1>
         <p>

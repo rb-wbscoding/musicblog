@@ -1,6 +1,7 @@
 .phone {
   display: none;
 }
+
 .App {
   display: flex;
   flex-direction: row;
@@ -46,7 +47,18 @@
   line-height: 1.5em;
 }
 
+.secondContainer h1 {
+  margin-top: 2em;
+}
+.secondContainer p {
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
 .socialMedia {
+
   position: fixed;
   bottom: 6%;
 }
@@ -103,6 +115,57 @@
  
   .phone {
     margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(222, 222, 214, 0.9);
+  }
+  .ar {
+    padding-bottom: 1.5em;
+  }
+ 
+ 
+}
+
+@media screen and (max-width: 760px) {
+  .App {
+    flex-direction: column-reverse;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  
+  
+  .secondContainer {
+    width: 100%;
+    margin: 0;
+  }
+  .secondContainer h1 {
+    margin-top: 0.5em;
+  }
+  .secondContainer p {
+    width: 90%;
+  }
+  .hidden {
+    display: none;
+  }
+  .socialMedia {
+    margin-top: 3em;
+    bottom: 1%;
+    display: none;
+  }
+  .arrowcont {
+    display: none;
+  }
+
+  
+  .phone {
+    margin-top: 2em;
 
     
     display: flex;
@@ -111,6 +174,7 @@
     align-items: center;
     color: rgba(222, 222, 214, 0.9);
   }
+
   .ar {
     padding-bottom: 1.5em;
   }
