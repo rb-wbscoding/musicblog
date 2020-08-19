@@ -1,11 +1,11 @@
 import React from "react";
 import { SocialMediaIconsReact } from "social-media-icons-react";
 
-import "./SocialMedia.css";
+import Styles from "./SocialMedia.module.css";
 
 export default function SocialMedia() {
   return (
-    <div className="social">
+    <div className={Styles.social}>
       <SocialMediaIconsReact
         icon="facebook"
         iconColor="rgba(222, 222, 214, 0.9)"

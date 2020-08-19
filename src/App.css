@@ -8,53 +8,27 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  position: fixed;
 }
 
-.entry img {
-}
+
 
 .container {
-  width: 35%;
-  margin-left: 3em;
-  margin-right: 3em;
-}
-header {
- 
-  height: 5em;
-  width: 100%;
+  width: 45vw;
+  margin-left: 0;
+  margin-right: 0;
+  height: 100vh;
 }
 
-.entry {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3em;
-  width: 100%;
-  border-radius: 1%;
-}
 
-@media screen and (max-width: 760px) {
-  .entry {
-    width: 90%;
-    margin: 0 auto ;
-  }
-  header {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
 
-.entry ul {
-  align-self: center;
-  justify-self: center;
-}
 
-.description {
-  text-align: justify;
-}
 
-.entry img {
-  width: 100%;
-}
+
+
 
 .secondContainer {
   display: flex;
