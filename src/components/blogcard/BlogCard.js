@@ -5,17 +5,21 @@ import { StateContext } from "../statecontext/stateContext";
 
 function BlogCard(){
     const [rotpost, setRotPost] = useState([])
-    const {entries, filteredEntries}=useContext(StateContext);
+    const {entries, filteredEntries, oneEntry}=useContext(StateContext);
+    const [smith, setSmith] = useState(Styles.down)
+    const [up, setUp]=useState(true)
 
    
 
     
     useEffect(()=>{
-    const newRots = filteredEntries.map(() => 0)
-    setRotPost(newRots)
-     
-    }, [filteredEntries])
-
+    const newRots = oneEntry.map(() => 0)
+    setRotPost(newRots) 
+    setSmith(Styles.down)
+    setTimeout(()=> {
+      setSmith(Styles.entrycontainer)}, 1000)    
+    
+    }, [oneEntry])
     
       function Rotatenow(idi){
         const fish=document.getElementById(idi).classList
@@ -29,51 +33,48 @@ function BlogCard(){
         })
         setRotPost(newRotPost);
         if(rotpost[idi]===0){
-            fish.remove(Styles.entry)
+            fish.remove(Styles.extra)
             fish.add(Styles.rotatright);
         } else if(rotpost[idi]===1){
             fish.remove(Styles.rotatright);
             fish.add(Styles.rotatleft);
         } else {
             fish.remove(Styles.rotatleft);
-            fish.add(Styles.entry);
-
+            fish.add(Styles.extra);
         }
-        
-
     }
+
+//const fish=document.getElementById(id).classList
+  //              fish.add(Styles.up)
+    //            
+
 
 return(
     <div >
         {
-            filteredEntries.map((entry, id) => (
-                            
-                            
-                <div className={Styles.entrycontainer}>
+            oneEntry.map((entry, id) =>{    
+                return (           
+                <div onTransitionEnd={()=>setUp(!up)} className={smith}>
                     <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} key={entry.sys.id}>
-                        <div id={id} className={Styles.front}>
-                            <h1 id={id}>{entry.fields.title}</h1>
-                            <img src={entry.fields.image.fields.file.url} id={id} alt="" /> 
+                        <div className={Styles.front}>
+                            <h1>{entry.fields.title}</h1>
+                            <img src={entry.fields.image.fields.file.url} alt="" /> 
                         </div>  
                         <div className={Styles.right}>
                             <section
-                            id={id}
                             className={Styles.description}
                             dangerouslySetInnerHTML={{ __html: marked(entry.fields.description)}}  
                         />  
                         </div>  
                         <div className={Styles.left}>
                             <section
-                            id={id}
                             className={Styles.iframe}
                             dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
                         />  
                         </div>             
                     </div>
                 </div>
-
-
-            ))
+            )})
         }
 
     </div>

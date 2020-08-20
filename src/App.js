@@ -6,6 +6,7 @@ import SocialMedia from './components/socialmedia/SocialMedia'
 import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
 import Arrow from "./components/arrow/Arrow";
+import Box from "./components/box/Box"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Filter />
         <div className="mainwrapper">
         <BlogCard />
+        <Box />
         </div>
         <div className="phone">
          <div className="ar"><Arrow /></div> 
