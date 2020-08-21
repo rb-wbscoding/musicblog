@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 import Styles from "./Blogcard.module.css"
 import marked from "marked"
 import { StateContext } from "../statecontext/stateContext";
@@ -7,17 +7,20 @@ function BlogCard(){
     const [rotpost, setRotPost] = useState([])
     const {entries, filteredEntries, oneEntry}=useContext(StateContext);
     const [smith, setSmith] = useState(Styles.down)
-    const [up, setUp]=useState(true)
-
-   
-
+    const [freeEntry, setFreeEntry]=useState([])
     
     useEffect(()=>{
     const newRots = oneEntry.map(() => 0)
     setRotPost(newRots) 
     setSmith(Styles.down)
+    setTimeout(()=>{
+    setFreeEntry(oneEntry)
     setTimeout(()=> {
-      setSmith(Styles.entrycontainer)}, 1000)    
+      setSmith(Styles.entrycontainer)}, 200)   
+    
+    }, 500)
+
+     
     
     }, [oneEntry])
     
@@ -52,9 +55,9 @@ function BlogCard(){
 return(
     <div >
         {
-            oneEntry.map((entry, id) =>{    
+            freeEntry.map((entry, id) =>{   
                 return (           
-                <div onTransitionEnd={()=>setUp(!up)} className={smith}>
+                <div  className={smith} >
                     <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} key={entry.sys.id}>
                         <div className={Styles.front}>
                             <h1>{entry.fields.title}</h1>
