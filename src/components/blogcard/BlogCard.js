@@ -1,30 +1,56 @@
 import React, {useContext, useState, useEffect, useRef} from "react";
 import Styles from "./Blogcard.module.css"
 import marked from "marked"
+import YouTubePlayer from 'youtube-player';
 import { StateContext } from "../statecontext/stateContext";
 
 function BlogCard(){
     const [rotpost, setRotPost] = useState([])
-    const {entries, filteredEntries, oneEntry}=useContext(StateContext);
+    const {entries, filteredEntries, oneEntry, setRateShow}=useContext(StateContext);
     const [smith, setSmith] = useState(Styles.down)
     const [freeEntry, setFreeEntry]=useState([])
-    
+    const iFrame=useRef(null)
+    //const player = new YT.Player('player')
+
+
     useEffect(()=>{
     const newRots = oneEntry.map(() => 0)
     setRotPost(newRots) 
+    setRateShow(false)
     setSmith(Styles.down)
     setTimeout(()=>{
     setFreeEntry(oneEntry)
     setTimeout(()=> {
+        
+        
+        if(iFrame.current!==null){
+            
+       
+        const fish=YouTubePlayer('video-player')
+        fish.playVideo()
+       
+       tryagain()
+       
+       function tryagain(){  
+       setTimeout(()=>{ 
+            
+            fish.getCurrentTime().then((e)=>{if(e>120){setRateShow(true)
+            //    fish.stopVideo()
+            }else{tryagain()}})
+            
+        }, 10000)}
+            
+    }
       setSmith(Styles.entrycontainer)}, 200)   
     
-    }, 500)
+    }, 400)
 
      
     
     }, [oneEntry])
     
       function Rotatenow(idi){
+        
         const fish=document.getElementById(idi).classList
         const newRotPost = rotpost.map((rot, index) => {
             if (index === idi ) {
@@ -46,12 +72,8 @@ function BlogCard(){
             fish.add(Styles.extra);
         }
     }
-
-//const fish=document.getElementById(id).classList
-  //              fish.add(Styles.up)
-    //            
-
-
+         
+ 
 return(
     <div >
         {
@@ -70,10 +92,12 @@ return(
                         />  
                         </div>  
                         <div className={Styles.left}>
-                            <section
-                            className={Styles.iframe}
-                            dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
-                        />  
+                        <section
+                        className={Styles.iframe}
+                            ref={iFrame}
+                           dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
+                       />  
+                        <div ></div>
                         </div>             
                     </div>
                 </div>

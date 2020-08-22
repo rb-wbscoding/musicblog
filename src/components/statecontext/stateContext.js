@@ -9,6 +9,7 @@ export default function StateContextProvider({ children }) {
     const [entries, setEntries] = useState([]);
     const [filteredEntries ,setFilteredEntries]=useState([]);
     const [oneEntry, setOneEntry]=useState([]);
+    const [rateShow, setRateShow]=useState(false);
 
   useEffect(() => {
    const client = Contentful.createClient({
@@ -21,6 +22,7 @@ export default function StateContextProvider({ children }) {
         content_type: "music",
       })
       .then((response) => {
+        console.log(response.items[0].sys.id)
         setEntries(response.items);
       });
   }, []);
@@ -32,7 +34,7 @@ export default function StateContextProvider({ children }) {
 
     return (
         <StateContext.Provider
-          value={{entries, filteredEntries ,setFilteredEntries, oneEntry, setOneEntry}}
+          value={{entries, filteredEntries ,setFilteredEntries, oneEntry, setOneEntry, rateShow, setRateShow}}
           >
             {children}
           </StateContext.Provider>

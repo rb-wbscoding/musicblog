@@ -7,6 +7,7 @@ import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
 import Arrow from "./components/arrow/Arrow";
 import Box from "./components/box/Box"
+import Rater from "./components/rater/Rater"
 
 
 function App() {
@@ -22,14 +23,14 @@ function App() {
         <Box />
         </div>
         <div className="phone">
-         <div className="ar"><Arrow /></div> 
+         {/*<div className="ar"><Arrow /></div> */}
           <div className="so"><SocialMedia /></div>
         </div>
 
       </div>
       <div className="phone">
-        <div className="ar"><Arrow /></div> 
-        <div className="so"><SocialMedia /></div>
+        {/*<div className="ar"><Arrow /></div>*/} 
+        <div className="so"><SocialMedia />  </div>
       </div>
       <div className="secondContainer">
         <h1>MUSIC BLOG</h1>
@@ -41,11 +42,12 @@ function App() {
         <p className="hidden">
           Don't hesitate to checkout our social media and YouTube channel.
         </p>
-        <div className="arrowcont">
+        {/*<div className="arrowcont">
           <Arrow />
-        </div>
+  </div>*/}
         <div className="socialMedia">
           <SocialMedia className="ikonki" />
+          <Rater />
         </div>
       </div>
     </div>
