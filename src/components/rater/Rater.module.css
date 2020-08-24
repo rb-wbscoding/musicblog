@@ -1,0 +1,132 @@
+.holdall {
+    color: white;
+    transition: all 2s;
+    opacity: 1;
+    transform: scale(1);
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    height: 5vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.invis {
+    transition: all 5s ease-out;
+    opacity: 0;
+    transform: scale(0.1);
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    height: 5vh;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.rater {
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    height: 2vh;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid grey;
+}
+
+.ratecont {
+    width: 80%;
+    position: relative;
+}
+
+.rate {
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.2);
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+}
+
+.rated {
+    height:100%;
+    width: 20%;
+    color: white;
+    text-justify: center;
+    text-align: center;
+    line-height: 1em;
+}
+
+.one {
+    position: absolute;
+    left: 10%;
+    line-height: 1em;
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.one:hover {
+    opacity: 1;
+}
+
+
+.two {
+    position: absolute;
+    left: 30%;
+    line-height: 1em;
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.two:hover {
+    opacity: 1;
+}
+
+
+.three {
+    position: absolute;
+    left: 50%;
+    line-height: 1em;
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.three:hover {
+    opacity: 1;
+}
+
+
+.four {
+    position: absolute;
+    left: 70%;
+    line-height: 1em;
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.four:hover {
+    opacity: 1;
+}
+
+
+.five {
+    position: absolute;
+    left: 90%;
+    line-height: 1em;
+    opacity: 0.5;
+    visibility: visible;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.five:hover {
+    opacity: 1;
+}

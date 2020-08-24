@@ -1,23 +1,54 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 import Styles from "./Blogcard.module.css"
 import marked from "marked"
+import YouTubePlayer from 'youtube-player';
 import { StateContext } from "../statecontext/stateContext";
 
 function BlogCard(){
     const [rotpost, setRotPost] = useState([])
-    const {entries, filteredEntries}=useContext(StateContext);
+    const {oneEntry, setRateShow}=useContext(StateContext);
+    const [smith, setSmith] = useState(Styles.down)
+    const [freeEntry, setFreeEntry]=useState([])
+    const iFrame=useRef(null)
 
-   
 
-    
     useEffect(()=>{
-    const newRots = filteredEntries.map(() => 0)
-    setRotPost(newRots)
-     
-    }, [filteredEntries])
+    const newRots = oneEntry.map(() => 0)
+    setRotPost(newRots) 
+    setRateShow(false)
+    setSmith(Styles.down)
+    setTimeout(()=>{
+    setFreeEntry(oneEntry)
+    setTimeout(()=> {
+        
+        
+        if(iFrame.current!==null){
+           
+        const dog= oneEntry[0].sys.id
+        const fish=YouTubePlayer(`${dog}`)
+        fish.playVideo()
+       
+       tryagain()
+       
+       function tryagain(){  
+       setTimeout(()=>{ 
+            
+            fish.getCurrentTime().then((e)=>{if(e>120){setRateShow(true)
+            }else{tryagain()}})
+            
+        }, 10000)}
+            
+    }
+      setSmith(Styles.entrycontainer)}, 200)   
+    
+    }, 400)
 
+     
+    
+    }, [oneEntry])
     
       function Rotatenow(idi){
+        
         const fish=document.getElementById(idi).classList
         const newRotPost = rotpost.map((rot, index) => {
             if (index === idi ) {
@@ -29,51 +60,46 @@ function BlogCard(){
         })
         setRotPost(newRotPost);
         if(rotpost[idi]===0){
-            fish.remove(Styles.entry)
+            fish.remove(Styles.extra)
             fish.add(Styles.rotatright);
         } else if(rotpost[idi]===1){
             fish.remove(Styles.rotatright);
             fish.add(Styles.rotatleft);
         } else {
             fish.remove(Styles.rotatleft);
-            fish.add(Styles.entry);
-
+            fish.add(Styles.extra);
         }
-        
-
     }
-
+         
+ 
 return(
     <div >
         {
-            filteredEntries.map((entry, id) => (
-                            
-                            
-                <div className={Styles.entrycontainer}>
-                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} key={entry.sys.id}>
-                        <div id={id} className={Styles.front}>
-                            <h1 id={id}>{entry.fields.title}</h1>
-                            <img src={entry.fields.image.fields.file.url} id={id} alt="" /> 
+            freeEntry.map((entry, id) =>{   
+                return (           
+                <div  className={smith} key={entry.sys.id}>
+                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} >
+                        <div className={Styles.front}>
+                            <h1>{entry.fields.title}</h1>
+                            <img src={entry.fields.image.fields.file.url} alt="" /> 
                         </div>  
                         <div className={Styles.right}>
                             <section
-                            id={id}
                             className={Styles.description}
                             dangerouslySetInnerHTML={{ __html: marked(entry.fields.description)}}  
                         />  
                         </div>  
                         <div className={Styles.left}>
-                            <section
-                            id={id}
-                            className={Styles.iframe}
-                            dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
-                        />  
+                        <section
+                        className={Styles.iframe}
+                            ref={iFrame}
+                           dangerouslySetInnerHTML={{ __html: marked(entry.fields.yt)}}  
+                       />  
+                        <div ></div>
                         </div>             
                     </div>
                 </div>
-
-
-            ))
+            )})
         }
 
     </div>

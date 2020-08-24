@@ -10,7 +10,6 @@ return(
     <div>
         <header>
             <div className={Styles.head}>
-                <h1>MUSIC CHOICE</h1>
             </div>
         </header>
     </div>    

@@ -16,7 +16,8 @@
     "react-dom": "^16.13.1",
     "react-native-webview": "^10.7.0",
     "react-scripts": "3.4.3",
-    "social-media-icons-react": "^1.0.10"
+    "social-media-icons-react": "^1.0.10",
+    "youtube-player": "^5.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
