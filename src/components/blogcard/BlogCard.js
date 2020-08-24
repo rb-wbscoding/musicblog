@@ -6,11 +6,10 @@ import { StateContext } from "../statecontext/stateContext";
 
 function BlogCard(){
     const [rotpost, setRotPost] = useState([])
-    const {entries, filteredEntries, oneEntry, setRateShow}=useContext(StateContext);
+    const {oneEntry, setRateShow}=useContext(StateContext);
     const [smith, setSmith] = useState(Styles.down)
     const [freeEntry, setFreeEntry]=useState([])
     const iFrame=useRef(null)
-    //const player = new YT.Player('player')
 
 
     useEffect(()=>{
@@ -24,9 +23,9 @@ function BlogCard(){
         
         
         if(iFrame.current!==null){
-            
-       
-        const fish=YouTubePlayer('video-player')
+           
+        const dog= oneEntry[0].sys.id
+        const fish=YouTubePlayer(`${dog}`)
         fish.playVideo()
        
        tryagain()
@@ -35,7 +34,6 @@ function BlogCard(){
        setTimeout(()=>{ 
             
             fish.getCurrentTime().then((e)=>{if(e>120){setRateShow(true)
-            //    fish.stopVideo()
             }else{tryagain()}})
             
         }, 10000)}
@@ -79,8 +77,8 @@ return(
         {
             freeEntry.map((entry, id) =>{   
                 return (           
-                <div  className={smith} >
-                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} key={entry.sys.id}>
+                <div  className={smith} key={entry.sys.id}>
+                    <div onClick={()=>Rotatenow(id)} className={Styles.entry} id={id} >
                         <div className={Styles.front}>
                             <h1>{entry.fields.title}</h1>
                             <img src={entry.fields.image.fields.file.url} alt="" /> 

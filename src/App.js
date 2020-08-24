@@ -5,7 +5,6 @@ import Header from './components/header/Header'
 import SocialMedia from './components/socialmedia/SocialMedia'
 import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
-import Arrow from "./components/arrow/Arrow";
 import Box from "./components/box/Box"
 import Rater from "./components/rater/Rater"
 

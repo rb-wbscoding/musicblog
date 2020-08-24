@@ -1,6 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
 import Styles from "./Filter.module.css"
-import marked from "marked"
 import { StateContext } from "../statecontext/stateContext";
 
 
@@ -13,26 +12,23 @@ function Filter(){
   
 
 useEffect(()=>{
-  
+   if(search===""){
+    setFilteredEntries(entries)
+  }else{
     
 setFilteredEntries(
   entries.filter(entry =>{return entry.fields.title.toLowerCase().includes(search.toLowerCase())})  
-  )
-
-
-  },[search])
+  )}
  
-  if(search===""){
-    setFilteredEntries(entries)
-  }
 
+  },[search, entries])
+ 
+  
 
-  //if (loading) {
-    //return <p>Loading countries....</p>;
- // }
 
 return(
          <input
+            className={Styles.input}
             type="text"
             placeholder="Search"
             onChange={(e) => setSearch(e.target.value)}

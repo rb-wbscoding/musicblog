@@ -22,7 +22,6 @@ export default function StateContextProvider({ children }) {
         content_type: "music",
       })
       .then((response) => {
-        console.log(response.items[0].sys.id)
         setEntries(response.items);
       });
   }, []);

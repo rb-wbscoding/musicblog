@@ -53,3 +53,8 @@
     transform: translateY(-0.4vh);
 }
 
+@media screen and (max-width: 760px) {
+    .container {
+      width: 90vw;
+      left: 5vw
+    }}
