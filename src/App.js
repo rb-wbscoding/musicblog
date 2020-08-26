@@ -19,16 +19,9 @@ function App() {
         <BlogCard />
         <Box />
         </div>
-        <div className="phone">
-         {/*<div className="ar"><Arrow /></div> */}
-          <div className="so"><SocialMedia /></div>
-        </div>
 
       </div>
-      <div className="phone">
-        {/*<div className="ar"><Arrow /></div>*/} 
-        <div className="so"><SocialMedia />  </div>
-      </div>
+     
       <div className="secondContainer">
         <h1>MUSIC BLOG</h1>
         <p>
@@ -39,9 +32,6 @@ function App() {
         <p className="hidden">
           Don't hesitate to checkout our social media and YouTube channel.
         </p>
-        {/*<div className="arrowcont">
-          <Arrow />
-  </div>*/}
         <div className="socialMedia">
           <SocialMedia className="ikonki" />
           <Rater />
