@@ -27,12 +27,17 @@ setFilteredEntries(
 
 
 return(
-         <input
-            className={Styles.input}
+
+        <div className={Styles.searchbar}>
+          <input
             type="text"
             placeholder="Search"
             onChange={(e) => setSearch(e.target.value)}
-           />)
+           />
+
+
+        </div>)
+         
 
 }
 

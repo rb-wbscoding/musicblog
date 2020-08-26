@@ -1,4 +1,36 @@
-.input {
-    height: 2vh;
 
-}
+
+.searchbar input {
+    padding: 0.8em;
+    background-color: transparent;
+    margin-top: 3em;
+    outline: none;
+    font-size: large;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 8.5px 8px rgba(0, 0, 0, 0.06),
+    0 12.3px 12.9px rgba(0, 0, 0, 0.072),
+    0 21.8px 28.4px rgba(0, 0, 0, 0.086),
+    0 50px 50px rgba(0, 0, 0, 0.12);
+    border-radius: 3%;
+  }
+  
+  input::placeholder {
+    color: black;
+    font-size: 1.2em;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  
+  @media screen and (max-width: 760px) {
+    .searchbar {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+   
+  }
