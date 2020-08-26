@@ -1,7 +1,6 @@
 
 import React from "react";
 import "./App.css";
-import Header from './components/header/Header'
 import SocialMedia from './components/socialmedia/SocialMedia'
 import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
@@ -15,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Header />
         <Filter />
         <div className="mainwrapper">
         <BlogCard />
