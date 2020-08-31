@@ -82,9 +82,18 @@
   border-radius: 3%;
   padding: 0.2em 0em;
 }
-  .front:hover {
-    transform: scale(0.995);
+
+.front:hover {
+  filter: contrast(1.4) saturate(1.8) sepia(.6);
+  -webkit-filter: contrast(1.4) saturate(1.8) sepia(.6);
+
+}
+
+  .front h1 {
+    width: 85%;
+    margin-left: 7.5%;
   }
+
 
   .left{
     transform: rotateY(120deg);

@@ -6,6 +6,7 @@ import BlogCard from './components/blogcard/BlogCard'
 import Filter from './components/filter/Filter'
 import Box from "./components/box/Box"
 import Rater from "./components/rater/Rater"
+import Graphicequal from "./components/graphicequal/Graphicequal"
 
 
 function App() {
@@ -13,8 +14,10 @@ function App() {
  
   return (
     <div className="App">
+      <Graphicequal />
       <div className="container">
         <Filter />
+        
         <div className="mainwrapper">
         <BlogCard />
         <Box />
@@ -32,6 +35,7 @@ function App() {
         <p className="hidden">
           Don't hesitate to checkout our social media and YouTube channel.
         </p>
+        
         <div className="socialMedia">
           <SocialMedia className="ikonki" />
           <Rater />

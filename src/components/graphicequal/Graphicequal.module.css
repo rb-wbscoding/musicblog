@@ -1,0 +1,6 @@
+.canvasContainer {
+    position: absolute;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: -1;
+  }
