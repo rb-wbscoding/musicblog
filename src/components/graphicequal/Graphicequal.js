@@ -15,6 +15,7 @@ function Graphicequal(){
     const audioCtx = new window.AudioContext();
     const analyser = audioCtx.createAnalyser();
     const gainNode = audioCtx.createGain()
+    const finish = audioCtx.createMediaStreamDestination()
     //navigator.mediaDevices.stream().then((e)=>{
     // audioCtx.createMediaStreamSource(e).connect(analyser)
      //gainNode.gain.setValueAtTime(1, audioCtx.currentTime)
@@ -82,7 +83,9 @@ function Graphicequal(){
     //navigator.mediaDevices.getDisplayMedia().then((e)=>{
     navigator.mediaDevices.getUserMedia({audio: true, video: false}).then((e)=>{
     
-      audioCtx.createMediaStreamSource(e).connect(gainNode).connect(analyser)
+      //audioCtx.createMediaStreamTrackSource(e).connect(finish).connect(gainNode).connect(analyser)
+      //const stream = document.querySelector('iframe').srcObject
+      audioCtx.createMediaStreamSource(e).connect(analyser)
       gainNode.gain.setValueAtTime(1, audioCtx.currentTime)})
     draw()
 
@@ -99,8 +102,9 @@ function Graphicequal(){
       const xw=window.innerWidth
       const xh=window.innerHeight
       
-      analyser.fftSize = 512;
-      const bufferLength = analyser.frequencyBinCount;
+      analyser.fftSize = 8192;
+      const bufferLength = analyser.fftSize;
+      //frequencyBinCount;
       const dataArray = new Uint8Array(bufferLength);
       analyser.getByteTimeDomainData(dataArray)
       //analyser.getByteFrequencyData(dataArray)
@@ -118,14 +122,15 @@ function Graphicequal(){
     
       contextRef.current.beginPath();
     
-      var sliceWidth = xw * 1.0 / bufferLength;
+      var sliceWidth = xw * 1 / bufferLength;
       var x = 0;
-    
+      //for (var nn = 0; nn < 10; nn++){
+      //var x = nn*bufferLength
+      //console.log(x)
       for (var i = 0; i < bufferLength; i++) {
-    
-        var v = dataArray[i] / 128.0;
+        var v = dataArray[i] / 128;
         var y = (v * xh / 2);
-    
+
         if (i === 0) {
           contextRef.current.moveTo(x, y);
         } else {
@@ -133,8 +138,10 @@ function Graphicequal(){
         }
     
         x += sliceWidth;
+        
         dataArray[i]=[]
       }
+    //}
     
       contextRef.current.lineTo(xw, xh / 2);
       contextRef.current.stroke();
